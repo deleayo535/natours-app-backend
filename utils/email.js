@@ -5,15 +5,17 @@ const sendEmail = async options => {
   const transporter = nodemailer.createTransport({
     host: process.env.EMAIL_HOST,
     port: process.env.EMAIL_PORT,
+    // service: 'Gmail',
     auth: {
       user: process.env.EMAIL_USERNAME,
       pass: process.env.EMAIL_PASSWORD
     }
+    //Activate i gmail "less secure a"
   });
 
   // 2) Define the email options
   const mailOptions = {
-    from: 'Jonas Schmedtmann <hello@jonas.io>',
+    from: 'Dele Ayo <hello@dele.io>',
     to: options.email,
     subject: options.subject,
     text: options.message
